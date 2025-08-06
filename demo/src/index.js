@@ -1,35 +1,18 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/layout";
-import Home from "./pages/home";
-
-
-
+import Login from "./pages/login";
+import FeedbackForm from "./pages/feedbackform";
+import FeedbackDashboard from "./pages/feedbackdashboard";
 
 export default function App() {
-  return (  
+  return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
+          <Route index element={<Login />} />
+          <Route path="feedbackform" element={<FeedbackForm />} />
+          <Route path="feedbackdashboard" element={<FeedbackDashboard />} />
 
         </Route>
       </Routes>
@@ -39,4 +22,3 @@ export default function App() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
-
